@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instituto Exemplo | Perfil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="conteiner">
+
+    <header class="cabecalho-perfil">
+      <div class="anel-avatar">
+        <div class="avatar"><img src="PERFIL.jpg" alt="Foto de perfil"></div>
+      </div>
+
+      <section class="informacoes">
+        <h1>ifrncnat</h1>
+        <p class="categoria">IFRN Natal Central</p>
+
+        <ul class="estatisticas">
+          <li><strong>1.248</strong> publicações</li>
+          <li><strong>12,5 mil</strong> seguidores</li>
+          <li><strong>180</strong> seguindo</li>
+        </ul>
+
+        <p class="bio">
+          Instagram oficial do IFRN Campus Natal Central.<br>
+          Sejam bem-vindos!<br>
+          <a href="#">linktr.ee/ifrncnat</a>
+        </p>
+
+        <div class="acoes">
+          <button class="botao primario" id="botaoSeguir">Seguir</button>
+          <button class="botao secundario">Enviar mensagem</button>
+        </div>
+      </section>
+    </header>
+
+    <section class="destaques">
+  <div class="destaque">
+    <div class="circulo"><img src="destaque1.jpg" alt="Esportes"></div>
+    Esportes
+  </div>
+  <div class="destaque">
+    <div class="circulo"><img src="destaque2.jpg" alt="Seleção"></div>
+    Seleção
+  </div>
+  <div class="destaque">
+    <div class="circulo"><img src="destaque3.jpg" alt="Rádio"></div>
+    Rádio
+  </div>
+  <div class="destaque">
+    <div class="circulo"><img src="destaque4.jpg" alt="Diretorias"></div>
+    Diretorias
+  </div>
+  <div class="destaque">
+    <div class="circulo"><img src="destaque5.jpg" alt="Dúvidas"></div>
+    Dúvidas
+  </div>
+  <div class="destaque">
+    <div class="circulo"><img src="destaque6.jpg" alt="Contatos"></div>
+    Contatos
+  </div>
+</section>
+
+    <nav class="abas">
+      <div class="aba ativa">Publicações</div>
+      <div class="aba">Reels</div>
+      <div class="aba">Repostagens</div>
+      <div class="aba">Marcados</div>
+    </nav>
+
+    <section class="grade">
+      <div class="publicacao"><img src="post1.jpg" alt="Corrida"></div>
+      <div class="publicacao"><img src="post2.jpg" alt="Eleições"></div>
+      <div class="publicacao"><img src="post3.jpg" alt="Cursos Tecnicos"></div>
+      <div class="publicacao"><img src="post5.jpg" alt="Seleção de fiscais"></div>
+      <div class="publicacao"><img src="post6.jpg" alt="Exame de seleçãos"></div>
+      <div class="publicacao"><img src="post7.jpg" alt="Homem falando"></div>
+    </section>
+
+  </main>
+
+  <script>
+    const botaoSeguir = document.getElementById("botaoSeguir");
+    botaoSeguir.addEventListener("click", () => {
+      const seguindo = botaoSeguir.classList.toggle("seguindo");
+      botaoSeguir.textContent = seguindo ? "Seguindo" : "Seguir";
+    });
+
+    const abas = document.querySelectorAll(".aba");
+    abas.forEach(aba => {
+      aba.addEventListener("click", () => {
+        abas.forEach(outra => outra.classList.remove("ativa"));
+        aba.classList.add("ativa");
+      });
+    });
+  </script>
+</body>
+</html>

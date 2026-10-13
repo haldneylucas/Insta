@@ -1,0 +1,190 @@
+:root {
+  --fundo: #0b0f14;
+  --cartao: #161b22;
+  --texto: #f5f5f5;
+  --suave: #9aa4b2;
+  --destaque-cor: #4f5bff;
+  --verde: #0f8a4f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.4;
+}
+
+.conteiner {
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.cabecalho-perfil {
+  display: flex;
+  gap: 72px;
+  align-items: flex-start;
+  padding-bottom: 32px;
+}
+
+.anel-avatar {
+  flex-shrink: 0;
+  width: 166px;
+  height: 166px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(45deg, #f9a825, #e91e63, #8e24aa);
+}.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid var(--fundo);
+  background: var(--verde);
+  display: grid;
+  place-items: center;
+  font-size: 56px;
+  font-weight: 800;
+  color: #fff;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.informacoes h1 { font-size: 20px; font-weight: 600; }
+.informacoes .categoria { color: var(--suave); font-size: 14px; margin-top: 4px; }
+
+.estatisticas {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 16px 0;
+  font-size: 15px;
+}
+
+.bio{ font-size: 14px; max-width: 420px; }
+.bio a{ color: #8ab4ff; text-decoration: none; font-weight: 600; }
+
+.acoes{ display: flex; gap: 8px; margin-top: 20px; }
+
+.botao{
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--texto);
+  background: var(--cartao);
+  cursor: pointer;
+  transition: filter .15s;
+}
+.botao:hover { filter: brightness(1.2); }
+.botao.primario { background: var(--destaque-cor); min-width: 160px; }
+.botao.secundario { min-width: 160px; }
+.botao.seguindo { background: #262c35; }
+
+.destaques {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  padding: 8px 0 32px;
+  scrollbar-width: none;
+}
+.destaques::-webkit-scrollbar { display: none; }
+
+.destaque .circulo {
+  width: 77px;
+  height: 77px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  border: 2px solid #3a424d;
+  padding: 3px;
+  background: var(--cartao);
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  overflow: hidden;
+}
+
+.destaque .circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}.abas {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  border-top: 1px solid #262c35;
+}.aba {
+  padding: 14px 4px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--suave);
+  border-top: 2px solid transparent;
+  margin-top: -1px;
+  cursor: pointer;
+}
+.aba.ativa { color: var(--texto); border-top-color: var(--texto); }
+
+.grade{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}.publicacao{
+  position: relative;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(14px, 2.6vw, 26px);
+  line-height: 1.15;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+}.publicacao img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}.publicacao::after{
+  content: "❤ 1,2 mil   💬 48";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, .55);
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity .2s;
+}.publicacao:hover::after { opacity: 1; }
+
+.pub1 { background: linear-gradient(135deg, #0f8a4f, #1bbf72); }
+.pub2 { background: linear-gradient(135deg, #4f5bff, #8e5bff); }
+.pub3 { background: linear-gradient(135deg, #e91e63, #ff7a59); }
+.pub4 { background: linear-gradient(135deg, #00838f, #26c6da); }
+.pub5 { background: linear-gradient(135deg, #f9a825, #ff6f00); }
+.pub6 { background: linear-gradient(135deg, #37474f, #78909c); }
+
+@media (max-width: 700px) {
+  .cabecalho-perfil { gap: 20px; flex-direction: column; align-items: center; text-align: center; }
+  .anel-avatar { width: 110px; height: 110px; }
+  .avatar { font-size: 38px; }
+  .estatisticas { justify-content: center; gap: 20px; }
+  .acoes { justify-content: center; }
+  .botao.primario, .botao.secundario { min-width: 0; flex: 1; }
+  .bio { margin: 0 auto; }
+  .abas { gap: 32px; }
+  .grade { gap: 2px; }
+}
